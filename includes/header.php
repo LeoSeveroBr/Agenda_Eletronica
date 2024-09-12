@@ -102,7 +102,7 @@ if (!isset($_SESSION['loginUser']) && !isset($_SESSION['senhaUser'])) {
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
+                        <a href="home.php?acao=perfil" class="dropdown-item">
                             <i class="fa fa-user-circle mr-2"></i> Alterar Perfil
                         </a>
                         <div class="dropdown-divider"></div>
