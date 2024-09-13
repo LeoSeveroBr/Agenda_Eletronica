@@ -20,7 +20,6 @@ if (isset($_POST['botao'])) {
       $cadastro = "INSERT INTO tb_contatos (nome_contatos,fone_contatos,email_contatos,foto_contatos) VALUES (:nome,:telefone,:email,:foto)";
 
       try {
-        $conexao = Database::getConexao();
         $result = $conexao->prepare($cadastro);
 
         $result->bindParam(":nome", $nome, PDO::PARAM_STR);
@@ -166,7 +165,6 @@ if (isset($_POST['botao'])) {
                   <?php
                   $dados = "SELECT * FROM `tb_contatos` LIMIT 10";
                   try {
-                    $conexao = Database::getConexao();
                     $result = $conexao->query($dados);
                     $cont = 1;
 

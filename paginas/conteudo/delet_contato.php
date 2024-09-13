@@ -5,8 +5,7 @@ if (isset($_GET["idUser"])) {
     $id = $_GET["idUser"];
     $sql = "DELETE FROM tb_contatos WHERE id_contatos = :id_contatos";
 
-    try {
-        $conexa = Database::getConexao();
+    try {        
         $prepare = $conexa->prepare($sql);
         $prepare->bindParam(":id_contatos", $id, PDO::PARAM_INT);
         $prepare->execute();

@@ -43,7 +43,6 @@ if (isset($_POST['atualizarCadastro'])) {
   }
 
   try {
-    $conexao = Database::getConexao();
     $result = $conexao->prepare($cadastro);
 
     $result->bindParam(":id", $id, PDO::PARAM_INT);
@@ -118,7 +117,6 @@ if (isset($_POST['atualizarCadastro'])) {
             <!-- form start -->
 
             <?php
-            $conexao = Database::getConexao();
 
             if (isset($_GET['idUser'])) {
               $id = $_GET['idUser'];

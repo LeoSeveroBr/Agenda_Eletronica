@@ -1,9 +1,9 @@
 <?php
-ob_start(); // Armazena os dados em cache
+/* ob_start() */ ;// Armazena os dados em cache
 session_start();
 
 if (!isset($_SESSION['loginUser']) && !isset($_SESSION['senhaUser'])) {
-    header("Location : ../index.php?acao=negado");
+    header("Location: ../index.php?acao=negado");
     exit;
 }
 
@@ -61,40 +61,6 @@ if (!isset($_SESSION['loginUser']) && !isset($_SESSION['senhaUser'])) {
             </ul>
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                <!-- Navbar Search -->
-                <li class="nav-item">
-
-
-                    <?php
-                    /*   if (isset($_SESSION['loginUser']) && empty($_SESSION['senhaUser'])) {
-                          echo "<pre>" . print_r($_SESSION['loginUser'], true) . "</pre>";
-                          echo "<pre>" . print_r($_SESSION['senhaUser'], true) . "</pre>";
-                      } else {
-                          echo "Sessão Vazia ......";
-                      } */
-                    ?>
-
-
-                    <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                        <i class="fas fa-search"></i>
-                    </a>
-                    <div class="navbar-search-block">
-                        <form class="form-inline">
-                            <div class="input-group input-group-sm">
-                                <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                    aria-label="Search" />
-                                <div class="input-group-append">
-                                    <button class="btn btn-navbar" type="submit">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </li>
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#" title="Perfil e Sair">
@@ -123,16 +89,16 @@ if (!isset($_SESSION['loginUser']) && !isset($_SESSION['senhaUser'])) {
                     style="opacity: 0.8" />
                 <span class="brand-text font-weight-light">Agenda Eletronica</span>
             </a>
-
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" />
+                        <img src="../img/<?php print_r($_SESSION['foto_user']) ?>" class="img-circle elevation-2"
+                            alt="User Image" />
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block"><?php print_r($_SESSION['nome_user']) ?></a>
                     </div>
                 </div>
 

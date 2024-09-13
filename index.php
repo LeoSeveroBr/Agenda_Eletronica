@@ -1,11 +1,11 @@
 <?php
 /* echo 'Diretório atual: ' . __DIR__; */
 
-ob_start(); // Armazena os dados em cache
+/* ob_start(); */ // Armazena os dados em cache
 session_start();
 
 if (isset($_SESSION['loginUser']) && isset($_SESSION['senhaUser'])) {
-  header("Location : paginas/home.php");
+  header("Location: paginas/home.php");
 }
 
 include('config/conexao.php');
@@ -32,21 +32,23 @@ if (isset($_POST['botao'])) {
   $dados = "SELECT * FROM tb_user WHERE email_user=:email AND senha_user=:senha";
 
   try {
-    $conexao = Database::getConexao();
     $result = $conexao->prepare($dados);
-
     $result->bindParam(":email", $email, PDO::PARAM_STR);
     $result->bindParam(":senha", $senha, PDO::PARAM_STR);
     $result->execute();
 
     if ($result->rowCount() > 0) {
-      /* $user = $result->fetch(PDO::FETCH_ASSOC); */
+      $user = $result->fetch(PDO::FETCH_ASSOC);
       /*  echo "Logado como: " . $user['email_user']; */
       $login = $_POST['email'];
       $senha = base64_encode($_POST['senha']);
+      $foto = $user['foto_user'];
+      $nome = $user['nome_user'];
       //Cria a sessao
       $_SESSION['loginUser'] = $login;
       $_SESSION['senhaUser'] = $senha;
+      $_SESSION['foto_user'] = $foto;
+      $_SESSION['nome_user'] = $nome;
 
       header("Refresh: 1, paginas/home.php?acao=bemvindo");
     } else {

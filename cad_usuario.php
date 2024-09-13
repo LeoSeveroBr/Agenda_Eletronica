@@ -21,7 +21,6 @@ if (isset($_POST['botao'])) {
       VALUES (:nome,:email,:senha,:foto)";
 
       try {
-        $conexao = Database::getConexao();
         $result = $conexao->prepare($cadastro);
 
         $result->bindParam(":nome", $nome, PDO::PARAM_STR);

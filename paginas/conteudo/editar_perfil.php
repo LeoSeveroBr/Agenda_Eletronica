@@ -43,7 +43,6 @@ if (isset($_POST['atualizarDados'])) {
   }
 
   try {
-    $conexao = Database::getConexao();
     $result = $conexao->prepare($cadastro);
 
     $result->bindParam(":id", $id, PDO::PARAM_INT);
@@ -120,7 +119,6 @@ if (isset($_POST['atualizarDados'])) {
             <!-- form start -->
 
             <?php
-            $conexao = Database::getConexao();
             $email = $_SESSION['loginUser'];
             $senha = $_SESSION['senhaUser'];
             $sql = "SELECT * FROM tb_user WHERE email_user =:email AND senha_user =:senha";
