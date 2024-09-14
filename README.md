@@ -10,3 +10,15 @@ Componetes utilizados no desenvolvimento:
 - Bootstrap 5
 
 Versão 1.1
+
+Agenda Eletronica Possui atualmente:
+
+- Cria usarios
+- Cria contatos
+- Lista dados dos contatos
+
+Objetivo Final:
+
+- Validar formulario
+- Buscar o Cep via API dos correios
+- Criar um dashbord com varias categorias como : Cliente,Prestador de Serviço ou contatos inexistente.

@@ -19,6 +19,10 @@ if (!isset($_SESSION['loginUser']) && !isset($_SESSION['senhaUser'])) {
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css" />
@@ -116,7 +120,7 @@ if (!isset($_SESSION['loginUser']) && !isset($_SESSION['senhaUser'])) {
                                     <img src="../img/<?php echo $fotoUser; ?>" class="img-circle elevation-2" alt="User Image" />
                                 </div>
                                 <div class="info">
-                                    <a href="#" class="d-block"><?php echo $nomeUser; ?></a>
+                                    <a href="home.php?acao=perfil" class="d-block"><?php echo $nomeUser; ?></a>
                                 </div>
                             </div>
 
