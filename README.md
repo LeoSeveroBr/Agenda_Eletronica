@@ -8,6 +8,7 @@ Componetes utilizados no desenvolvimento:
 - PHP 8.3
 - MySql
 - Bootstrap 5
+- Jquery
 
 Versão 1.1
 
